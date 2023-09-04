@@ -15,7 +15,7 @@
 #rm -rf /usr/share/nginx/html/* &>>${LOG}
 #status_check
 #
-#print_head "copy nginx old file"
+#print_head "Download frontend content"
 #curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
 #
 #cd /usr/share/nginx/html &>>${LOG}
@@ -42,6 +42,30 @@
   ansible.builtin.file:
     path: /usr/share/nginx/html
     state: absent
+
+- name: create httpd directory
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: directory
+
+- name: Download frontend app content
+  ansible.builtin.unarchive:
+    src: https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
+    dest: /usr/share/nginx/html
+    remote_src: yes
+
+- name: Copy roboshop conf file
+  ansible.builtin.copy:
+    src: roboshop.conf
+    dest: etc/nginx/default.d/roboshop.conf
+
+- name: start nginx service
+  ansible.builtin.systemd:
+    state: restarted
+    name: nginx
+    enable: yes
+
+
 
 
 
