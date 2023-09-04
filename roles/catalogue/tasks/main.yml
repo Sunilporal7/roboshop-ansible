@@ -1,0 +1,9 @@
+- name: test
+  ansible.builtin.debug:
+    msg: hello from catalogue
+
+
+
+
+
+    
