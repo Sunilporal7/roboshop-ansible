@@ -38,6 +38,12 @@
     name: nginx
     state: installed
 
+- name: Remove old  httpd document
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: absent
+
+
 
 
 
