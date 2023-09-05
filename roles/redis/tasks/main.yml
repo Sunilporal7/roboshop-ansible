@@ -1,0 +1,25 @@
+- name: Install redis repo
+  ansible.builtin.yum:
+    name: dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+    state: installed
+    disable_gnp_check: true
+
+- name: enable redis 6
+  ansible.builtin.shell: dnf module enable redis:remi-6.2 -y
+
+- name: Install redis
+  ansible.builtin.yum:
+    name: redis
+    state: installed
+
+- name: update redis listen address
+  ansible.builtin.copy:
+    path: /etc/redis.conf
+    src: "127.0.0.1"
+    dest: "0.0.0.0"
+
+- name: start redis
+  ansible.builtin.systemd:
+    name: redis
+    state: restarted
+    enabled: yes
