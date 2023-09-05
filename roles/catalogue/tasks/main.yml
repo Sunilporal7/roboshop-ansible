@@ -54,7 +54,7 @@
     state: installed
 
 - name: load schema
-  ansible.builtin.command: mongo --host mongodb-dev.devopsroboshop.online </app/schema/catalogue.js
+  ansible.builtin.command: mongo --host mongodb-dev.devopsroboshop.online < /app/schema/catalogue.js
 
 
 
