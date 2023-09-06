@@ -26,12 +26,12 @@
     dest: /app
     remote_src: yes
 
-- name: install nodejs dependicies
+- name: install nodejs dependencies
   community.general.npm:
     path: /app
     state: latest
 
-- name: copy {{component}}.service file
+- name: copy systemd file
   ansible.builtin.copy:
     src: "{{component}}.service"
     dest: /etc/systemd/system/{{component}}.service
