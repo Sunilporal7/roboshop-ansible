@@ -4,7 +4,7 @@
 - name: Install nodejs application
   ansible.builtin.yum:
     name: nodejs
-    state: latest
+    state: installed
 
 - name: Add Application user
   ansible.builtin.user:
