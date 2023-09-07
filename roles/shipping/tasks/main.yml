@@ -1,0 +1,22 @@
+#print_head "install maven"
+#yum install maven -y &>>${LOG}
+#status_check
+#
+#app_prereq
+#
+#print_head "build a package"
+#mvn clean package
+#status_check
+#
+#print_head "copy app file to location"
+#mv target/${component}-1.0.jar ${component}.jar
+#status_check
+#
+#systemd_setup
+#
+#load_schema
+
+- name: install maven
+  ansible.builtin.yum:
+    name: maven
+    state: installed
