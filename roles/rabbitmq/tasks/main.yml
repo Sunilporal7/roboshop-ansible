@@ -9,7 +9,7 @@
     name:
       - erlang
       - rabbitmq-server
-    state: instlled
+    state: installed
 
 - name: start rabbitmq server
   ansible.builtin.systemd:
