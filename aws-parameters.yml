@@ -8,4 +8,31 @@
         value: "{{ item.value }}"
         region: us-east-1
       loop:
-        - {name: "dev.cart.REDIS_HOST" , value: "redis-dev.devopsroboshop.online"}
+        - {name: "dev.cart.REDIS_HOST", value: "redis-dev.devopsroboshop.online"}
+        - {name: "dev.cart.CATALOGUE_HOST", value: "catalogue-dev.devopsroboshop.online"}
+        - {name: "dev.catalogue.MONGO", value: "true" }
+        - {name: "dev.catalogue.MONGO_URL", value: "mongodb-dev.devopsroboshop.online:27017/catalogue" }
+        - {name: "dev.frontend.CATALOGUE_URL", value: "catalogue-dev.devopsroboshop.online:8080" }
+        - {name: "dev.frontend.CART_URL", value: "cart-dev.devopsroboshop.online:8080" }
+        - {name: "dev.frontend.USER_URL", value: "user-dev.devopsroboshop.online:8080" }
+        - {name: "dev.frontend.PAYMENT_URL", value: "payment-dev.devopsroboshop.online:8080" }
+        - {name: "dev.frontend.SHIPPING_URL", value: "shipping-dev.devopsroboshop.online:8080" }
+        - {name: "dev.payment.CART_HOST", value: "cart-dev.devopsroboshop.online" }
+        - {name: "dev.payment.CART_PORT", value: "8080" }
+        - {name: "dev.payment.USER_HOST", value: "user-dev.devopsroboshop.online" }
+        - {name: "dev.payment.USER_PORT", value: "8080" }
+        - {name: "dev.payment.AMQP_HOST", value: "rabbitmr-dev.devopsroboshop.online" }
+        - {name: "dev.payment.AMQP_USER", value: "rabbitmr-dev.devopsroboshop.online" }
+        # passwords should never kept in repos like this #lab purpose
+        - {name: "dev.payment.AMQP_PASS", value:"roboshop123" }
+        - {name: "dev-shipping.CART_ENDPOINT",value: "cart-dev.devopsroboshop.online:8080" }
+        - {name: "dev-shipping.DB_HOST",value: "mysql-dev.devopsroboshop.online" }
+        - {name: "dev-user.MONGO",value: "true"}
+        - {name: "dev-user.REDIS_HOST",value: "redis-dev.devopsroboshop.online" }
+        - {name: "dev-user.MONGO_URL",value: "mongodb://mongodb-dev.devopsroboshop.online:27017/users" }
+
+
+
+
+
+
