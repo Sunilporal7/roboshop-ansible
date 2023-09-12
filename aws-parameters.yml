@@ -25,7 +25,7 @@
         - {name: "dev.payment.AMQP_USER", value: "rabbitmr-dev.devopsroboshop.online" }
         - {name: "dev-shipping.CART_ENDPOINT",value: "cart-dev.devopsroboshop.online:8080" }
         - {name: "dev-shipping.DB_HOST",value: "mysql-dev.devopsroboshop.online" }
-        - {name: "dev-user.MONGO",value: "true"}
+        - {name: "dev-user.MONGO",value: "true" }
         - {name: "dev-user.REDIS_HOST",value: "redis-dev.devopsroboshop.online" }
         - {name: "dev-user.MONGO_URL",value: "mongodb://mongodb-dev.devopsroboshop.online:27017/users" }
 
